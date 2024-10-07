@@ -5,7 +5,7 @@ There are multiple varibles that you can edit to change the ASCII:
 
 IMPORTANT:
 - For this to work, you need to have a .jpg file and specify its name in the "im" variable. Currently, that is line 20.
-- If you are on a Windows / Macintosh machine, change the "font" varible path. This code was developed on Linux, and therefore the pathway will only work on Linux.
+- If you are on a Windows / Macintosh machine, change the "font" variable path. This code was developed on Linux, and therefore the pathway will only work on Linux.
 
 What each variable does:
 - "SIGNLE CHAR_HEIGHT" : How tall each character within the ASCII will be.
