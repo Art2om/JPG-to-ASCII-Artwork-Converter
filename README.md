@@ -1,4 +1,5 @@
 This is the ASCII Artwork Converter project!
+
 There are multiple varibles that you can edit to change the ASCII:
 "SINGLE_CHAR_HEIGHT", "SIGNLE_CHAR_WIDTH", "SCALE_FACTOR", "font", "chars".
 
