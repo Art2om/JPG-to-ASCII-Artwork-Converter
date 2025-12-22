@@ -7,7 +7,7 @@ class Converter:
         self.image = Image.open(image_path)
         self.image_width = self.image.width
         self.image_height = self.image.height
-        self.strength_interval = 256 / len(chars)    # Explained in the documentation.
+        self.strength_interval = TOTAL_RGB_VALUES / len(chars)    # Explained in the documentation.
     
     def scale_image(self) -> Image:
         resized_image = self.image.resize(size = (round(self.image_width * IMAGE_SCALOR),
