@@ -1,12 +1,12 @@
-from converter import Converter
+from converter import Converter_for_Image
 from constants import *
 
 # Standard
 image_path = "Andromeda_Galaxy.jpeg"
-converter = Converter(image_path)
+converter = Converter_for_Image(image_path)
 
-intensity = converter.get_intensity_of_pixel_through_average((0, 0, 0))
-index = converter.get_character_index(intensity)
-print(index)
-
-print(simpler_chars[index])
+product = converter.convert_image_to_ASCII_through_average()
+with open("product.txt", "w") as file:
+    file.write(product)
+image_product = converter.draw_ASCII_image(product)
+image_product.save("product.png")
