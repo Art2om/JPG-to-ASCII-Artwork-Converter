@@ -11,6 +11,7 @@ class Converter_for_Image:
     
     def __del__(self):
         self.image.close()
+        print("Converter_for_Image instance closed.")
     
     def _scale_image_for_ASCII(self) -> Image:
         resized_image = self.image.resize(size = (round(self.image_width * IMAGE_SCALOR / INDIVIDUAL_CHARACTER_WIDTH),
