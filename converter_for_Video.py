@@ -11,7 +11,7 @@ class Converter_for_Video:
         self.video.release()
         print("Converter_for_Video instance closed.")
     
-    def get_all_frames_from_video(self, non_existant_frame_folder_path:str):
+    def _get_all_frames_from_video(self, non_existant_frame_folder_path:str):
         frame_number = 0
         state = True
         
@@ -28,7 +28,7 @@ class Converter_for_Video:
                 frame_number += 1
         print(f"Number of frames saved: {frame_number}")
     
-    def turn_all_images_into_ASCII_inside_folder(self, frame_folder_path:str, non_existant_ASCII_frames_folder:str):
+    def _turn_all_images_into_ASCII_inside_folder(self, frame_folder_path:str, non_existant_ASCII_frames_folder:str):
         if (not os.path.exists(frame_folder_path)):
             print("The frame folder does not exist.")
             return
@@ -53,7 +53,7 @@ class Converter_for_Video:
             frames_turned_into_ASCII += 1
         print(f"Total images turned into ASCII: {frames_turned_into_ASCII}")
     
-    def make_video_from_ASCII_folder(self, frame_folder_path:str):
+    def _make_video_from_ASCII_folder(self, frame_folder_path:str):
         ASCII_image = Image.open(f"{frame_folder_path}/frame_0.png")
         image_width = ASCII_image.width
         image_height = ASCII_image.height
@@ -73,5 +73,10 @@ class Converter_for_Video:
             video_writer.write(image)
 
         video_writer.release()
-
-        
+    
+    def convert_video_to_ASCII_video(self, non_existant_frame_folder_path:str, non_existant_ASCII_frames_folder:str):
+        self._get_all_frames_from_video(non_existant_frame_folder_path)
+        frame_folder_path = non_existant_frame_folder_path
+        self._turn_all_images_into_ASCII_inside_folder(frame_folder_path, non_existant_ASCII_frames_folder)
+        ASCII_frame_folder = non_existant_ASCII_frames_folder
+        self._make_video_from_ASCII_folder(ASCII_frame_folder)

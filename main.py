@@ -18,9 +18,7 @@ image_product = converter_image.draw_ASCII_image(product)
 image_product.save("product.png")
 '''
 
-converter_video.get_all_frames_from_video(frame_folder)
-converter_video.turn_all_images_into_ASCII_inside_folder(frame_folder, ASCII_folder)
-converter_video.make_video_from_ASCII_folder(ASCII_folder)
+converter_video.convert_video_to_ASCII_video(frame_folder, ASCII_folder)
 
 # Standard
 del converter_image
